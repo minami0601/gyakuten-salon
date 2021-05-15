@@ -12,10 +12,12 @@
                 <div class="form-group">
                     <label for="title">タイトル</label>
                     <input class="form-control" id="title" type="text" name="title" value="{{$post->title}}">
+                    <div class="text-danger">{{ $errors->first('title')}}</div>
                 </div>
                 <div>
                     <label for="body">本文</label>
                     <textarea  class="form-control" id="body" name="body" rows="4" value="{{$post->body}}">{{$post->body}}</textarea>
+                    <div class="text-danger">{{ $errors->first('body')}}</div>
                 </div>
                 <div class="mt-5">
                     <a class="btn btn-secondary" href="{{route('posts.show', ['post'=>$post])}}">
